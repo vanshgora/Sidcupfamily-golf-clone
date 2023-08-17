@@ -1,0 +1,67 @@
+.sec-1 {
+    display: flex;
+    padding-left: 140px;
+}
+
+.sec-1-img {
+    width:50% ;
+    height: 80vh;
+    border-radius: 25px;
+    object-fit: cover;
+    order: 2;
+}
+
+.sec-1-info {
+    margin-top: 20px;
+
+    h1 {
+        position: absolute;
+        width: 50%;
+        font-size: 85px;
+        z-index: 9;
+    }
+
+    .tr-primary-head::before {
+        content: "TOPTRACER RANGE";
+    }
+
+    .gl-primary-head::before {
+        content: "GOLF LESSONS";
+    }
+
+    .ag-primary-head::before {
+        content: "ADVENTURE GOLF";
+    }
+
+    .cafe-primary-head::before {
+        content: "CAFE";
+    }
+
+    .events-primary-head::before {
+        content: "EVENTS";
+    }
+
+    h1::before {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        color: #000;
+        -webkit-text-stroke: 2px $primary-green;
+        font-size: 85px;
+        z-index: -1;
+    }
+
+    .secondary-head {
+        font-weight: 700;
+        color: $primary-green;
+        font-size: 25px;
+    }
+
+    .sec-1-para {
+        margin-top: 200px;
+        font-size: 23px;
+        line-height: 35px;
+        width: 90%;
+        text-transform: lowercase;
+    }
+}

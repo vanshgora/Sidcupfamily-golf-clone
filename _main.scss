@@ -1,0 +1,472 @@
+main{
+    // position: relative;
+    background: #00000069;
+    overflow: hidden;
+}
+
+#page-1 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    @include flex-cen;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.primary-head {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 250px;
+    font-size: 100px;
+    font-weight: 900;
+    position: relative;
+}
+
+.primary-head::before{
+    content: 'EAT. DRINK. PLAY.';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    color: #000;
+    z-index: -1;
+    -webkit-text-stroke: 2px $primary-green;
+}
+
+.secondary-head {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.intro-para 
+{
+    font-size: 22px;
+    font-weight: 500;
+    width: 45%;
+}
+
+#page-2 {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 10;
+}
+
+.scroll-text {
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.scroll-text::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll-line {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    a {
+        display: inline-block;
+        margin: 10px;
+        font-size: 120px;
+        font-weight: 900;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #000;
+        -webkit-text-stroke: 2px #fff;
+    }
+
+    a:hover {
+        color: $primary-green;
+        transition: all linear 0.5s;
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+.about-us{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+
+    img {
+        width: 140px;
+        height: 140px;
+        border-radius: 8%;
+        object-fit: cover;
+    }
+}
+
+.about-us-info{
+    width: 50%;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.about-us-head {
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.about-us-para {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.tilt-cards{
+    position: relative;
+    width: 87%;
+    margin-left: 6%;
+    margin-right: 11%;
+    margin-top: 50px;
+    padding: 0 15px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+
+    .dotted-img{
+        width: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.cards {
+    position: relative;
+    width: 30%;
+    height: 85vh;
+    border-radius: 4%;
+    z-index: 9;
+    overflow: hidden;
+}
+
+#card1 {
+    background-size: cover;
+    background-position: center;
+}
+
+#card2 {
+    background-size: cover;
+    background-position: center;
+}
+
+#card3 {
+    background-size: cover;
+    background-position: center;
+}
+
+.img-eff {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-in {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 10%;
+    background: $primary-green;
+    opacity: 0;
+    z-index: 11;
+}
+
+.card-in-head {
+    color: #000;
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.card-in-para {
+    padding-bottom: 50px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.tilt-cards:hover {
+
+    .cards {
+        transform: rotate3d(1,1,0,10deg);
+        transition: all 0.7s ease;  
+    }
+}
+
+.cards:hover {
+    transform: rotate3d(-1,1,0,12.5deg) !important;
+    transition: all 0.7s ease;
+
+    .img-eff {
+        scale: 1.1;
+        transition: all 0.7s ease;
+    }
+
+    .card-in {
+        opacity: 1;
+        transition: all 0.7s ease;
+    }
+}
+
+.green-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    height: 40vh;
+    background: linear-gradient(to left bottom, #469a06, #ace022);
+    overflow: hidden;
+
+    img {
+        width: 180px;
+        object-fit: cover;
+    }
+}
+
+.green-sec-info {
+    width: 50%;
+}
+
+.green-sec-para {
+    color: #000;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+}
+
+.fnd-sec {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    height: 75vh;
+    width: 100%;
+    margin: 0;
+    margin-top: 60px;
+    padding: 0 40px;
+
+    .dooted-img {
+        position: absolute;
+        bottom: 0;
+        left: 5.25%;
+        width: 180px;
+    }
+}
+
+.fnd-eff-container {
+    position: relative;
+    height: 100%;
+    width: 44%;
+    z-index: 11;
+}
+
+.fnd-img-container {
+    position: relative;
+    height: 90%;
+    width: 100%;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+
+.fnd-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all 1s linear;
+}
+
+.fnd-img-active {
+    opacity: 1 ;
+}
+
+.fnd-btn-set {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.fnd-btn-bdr {
+    @include flex-cen;
+    margin: 0 4px;
+    padding: 10px;
+    height: 35px;
+    width: 35px;
+    border: 3px solid transparent;
+    border-radius: 100%;
+}
+
+.fnd-btn-active {
+    border-color: $primary-green;
+    transition: all 1s linear;
+
+    .fnd-btn {
+        background-color: $primary-green;
+        transition: all 1s linear;
+    }
+}
+
+.fnd-btn {
+    border: none;
+    height: 8px;
+    width: 8px;
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+.fnd-info {
+    height: 90%;
+    width: 40%;
+}
+
+.fnd-head {
+    font-size: 60px;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.fnd-para {
+    margin-bottom: 35px;
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 400;
+}
+
+.coffee-btn {
+    margin-top: 80px;
+    padding: 14px 35px;
+    border: 3px solid $primary-green;
+    border-radius: 30px;
+    background: #000;
+    font-size: 17px;
+    font-weight: 200;
+    text-transform: uppercase;
+} 
+
+.coffee-btn:hover {
+    background: $primary-green;
+    color: #fff;
+    font-weight: 100;
+    scale: 0.8;
+    transition: all 0.5s ease;
+}
+
+.insta-sec {
+    position: relative;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    min-width: 100%;
+    height: 30vh;
+    transform: rotateZ(-3deg);
+}
+
+.insta-slide {
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.img-link {
+    margin: 0 8px;
+}
+
+.insta-img {
+    height: 25vh;
+    border-radius: 5px;
+}
+
+.insta-link {
+    position: absolute;
+    left: 65%;
+    font-size: 22px;
+    font-weight: 800;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.insta-link i:hover {
+    color: $primary-green;
+    transition: all 1s ease;
+} 
+
+.insta-line:hover {
+    color: $primary-green;
+    transition: all 1s ease;
+}
+
+.quote-sec {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    margin-left: 10%;
+    width: 80%;
+    height: 65vh;
+}
+
+.up-quote {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.down-quote {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.quote-list {
+    position: relative;
+    width: 90%;
+    margin-top: 120px;
+}
+
+.quote {
+    position: absolute;
+    text-align: center;
+    font-size: 35px;
+    line-height: 50px;
+    font-weight: 800;
+    opacity: 0;
+}
+
+.quote-active {
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.quote-img {
+    width: 80px;
+}

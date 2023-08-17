@@ -1,0 +1,8 @@
+$white-col: #fff;
+$primary-green:#95c11e;
+
+@mixin flex-cen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

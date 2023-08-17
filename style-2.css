@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  perspective: 800px;
+  background-color: #000;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+  padding: 0 8%;
+  height: 145px;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav-btn {
+  position: relative;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  margin-bottom: 50px;
+}
+
+.nav-bgr {
+  position: relative;
+  width: 35px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: all 0.5s ease;
+}
+
+.nav-bgr::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 35px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+
+.nav-bgr::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 35px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+
+.nav-btn-active .nav-bgr {
+  height: 0;
+  transition: none;
+}
+.nav-btn-active .nav-bgr::after {
+  background-color: #000;
+  top: 0;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+.nav-btn-active .nav-bgr::before {
+  background-color: #000;
+  top: 0;
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+}
+
+.logo-img {
+  height: 75px;
+}
+
+.nav-item {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.back-vid {
+  max-height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+
+.sec-1 {
+  display: flex;
+  padding-left: 140px;
+}
+
+.sec-1-img {
+  width: 50%;
+  height: 80vh;
+  border-radius: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  order: 2;
+}
+
+.sec-1-info {
+  margin-top: 20px;
+}
+.sec-1-info h1 {
+  position: absolute;
+  width: 50%;
+  font-size: 85px;
+  z-index: 9;
+}
+.sec-1-info .tr-primary-head::before {
+  content: "TOPTRACER RANGE";
+}
+.sec-1-info .gl-primary-head::before {
+  content: "GOLF LESSONS";
+}
+.sec-1-info .ag-primary-head::before {
+  content: "ADVENTURE GOLF";
+}
+.sec-1-info .cafe-primary-head::before {
+  content: "CAFE";
+}
+.sec-1-info .events-primary-head::before {
+  content: "EVENTS";
+}
+.sec-1-info h1::before {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  color: #000;
+  -webkit-text-stroke: 2px #95c11e;
+  font-size: 85px;
+  z-index: -1;
+}
+.sec-1-info .secondary-head {
+  font-weight: 700;
+  color: #95c11e;
+  font-size: 25px;
+}
+.sec-1-info .sec-1-para {
+  margin-top: 200px;
+  font-size: 23px;
+  line-height: 35px;
+  width: 90%;
+  text-transform: lowercase;
+}
+
+.last-sec {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.last-head-text {
+  position: absolute;
+  top: 5%;
+  font-size: 60px;
+  font-weight: 900;
+  color: #000;
+  -webkit-text-stroke: 1px #fff;
+  -webkit-text-stroke-width: 80%;
+}
+
+.last-sec-item {
+  position: relative;
+  width: 26%;
+  height: 23vh;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.last-sec-item img {
+  position: absolute;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  scale: 1.1;
+  transition: all 0.5s ease;
+}
+
+.last-sec-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #95c11e;
+  transition: all 0.5s ease;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.last-sec-item:hover img {
+  scale: 1;
+}
+.last-sec-item:hover .last-sec-text {
+  background-color: transparent;
+  color: #fff;
+}
+
+.footer {
+  padding-top: 10vh;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(to left bottom, #469a06, #ace022);
+}
+.footer .dooted-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50vh;
+  z-index: 9;
+}
+.footer a:hover {
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.footer-sec-1 {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 35vh;
+}
+
+.logo-n-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 50px;
+  height: 100%;
+  z-index: 11;
+}
+
+.icon-list {
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.icon-list i {
+  color: #000;
+  font-size: 1.5rem;
+}
+.icon-list i:hover {
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.link-list-1, .link-list-2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 21vh;
+  z-index: 11;
+}
+
+.ft-link {
+  font-size: 40px;
+  font-weight: 900;
+  color: #000;
+}
+
+.adderss-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 23vh;
+  z-index: 11;
+}
+
+.adderss-line {
+  color: #000;
+}
+
+.p-no {
+  color: #000;
+}
+
+.adderss-link {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+}
+
+.footer-sec-2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5%;
+}
+
+.help-link, .web-link {
+  color: #000;
+  font-size: 18px;
+}
+
+nav {
+  position: sticky;
+  background: #000;
+}/*# sourceMappingURL=style-2.css.map */
